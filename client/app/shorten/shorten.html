@@ -1,10 +1,9 @@
 <div id='container'>
 <!-- Your code here -->
 
-<!-- start here saturday-->
   <form name="shortenForm" ng-submit='addLink()'>
-    <input type='text'ng-model='link.url'>
-    <button>shorten</button>
+    <input type='url' ng-model='link.url' placeholder='Enter url to shorten' required>
+    <button ng-disabled='shortenForm.$invalid'>shorten</button>
   </form>
 
 </div>

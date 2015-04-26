@@ -1,10 +1,13 @@
 <div id='container' ng-controller="LinksController">
   <!-- Your html here -->
 
-  <!-- We don't have any links, so nothing is showing up -->
+  <form class="form-inline">
+    <input ng-model="query" type="text" placeholder="Filter by" autofocus>
+  </form>
   <ul>
-    <li ng-repeat="link in data.links"> 
-      <h3>{{link.url}}</h3>
+    <li ng-repeat="link in data.links | filter:query | orderBy:'-visits'"> 
+      <a href="/api/links/{{link.code}}" class="link">{{link.title}}</a>
+      <p>http://localhost:3000/api/links/{{link.code}} visits: {{link.visits}}</p>
     </li>
   </ul>
 
