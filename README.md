@@ -1,4 +1,4 @@
-#shortly-angular
+# shortly-angular
 
 Converted the previous link shortener project to use Angular instead of Backbone.
 
